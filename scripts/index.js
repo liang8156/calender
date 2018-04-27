@@ -21,8 +21,6 @@ function calendar(yr, mth) {
 
     var dt = new Date(yr, mth - 1, 1);
     var wd = dt.getDay();               //判斷是星期幾 於39行用來畫月曆
-
-
     cal = '<table>';
     cal += '<tr class=calendarTitle>';
     cal += '<th  colspan=5>' + yr + '年' + mth + '月' +
@@ -58,19 +56,19 @@ function calendar(yr, mth) {
     document.getElementById('calendar').innerHTML = cal;
 }
 
-a = '<select  id="selectYear" onchange="select_value();">'
+selectDay = '<select  id="selectYear" onchange="select_value();">'
 for (i = 2000; i < 2030; i++) {
-    a += '<option value="' + i + '">' + i + '</option>';
+    selectDay += '<option value="' + i + '">' + i + '</option>';
 }
-a += '</select>'
+selectDay += '</select>'
 
-a += '<select  id="selectMonth" onchange="select_value();">'
+selectDay += '<select  id="selectMonth" onchange="select_value();">'
 for (i = 1; i <= 12; i++) {
-    a += '<option value="' + i + '">' + i + '</option>';
+    selectDay += '<option value="' + i + '">' + i + '</option>';
 }
-a += '</select>'
+selectDay += '</select>'
+document.getElementById('selectYM').innerHTML = selectDay;
 
-document.getElementById('selectYM').innerHTML = a;
 var td = new Date();           //初始值,剛加入未調的得到的初始日期
 var year = td.getFullYear();
 var month = td.getMonth() + 1; //因為1月時是從0開始算 故給值時月數+1
