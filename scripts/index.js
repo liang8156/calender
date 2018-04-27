@@ -1,6 +1,6 @@
 function select_value() {
-    year = document.getElementById("selectYear").value
-    month = document.getElementById("selectMonth").value
+    year = Number(document.getElementById("selectYear").value)
+    month = Number(document.getElementById("selectMonth").value)
     calendar(year, month);
 }
 
